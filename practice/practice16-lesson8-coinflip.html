@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <button onclick="
+    playGame('head');
+    ">
+    head
+  </button>
+
+  <button onclick="
+  playGame('tails');
+  "
+    tails
+  </button>
+
+
+
+
+
+  <script>
+    let random;
+    let result ;
+    let pick ;
+    let outcome;
+    function playGame(pick) {
+      computerPick(); 
+
+      pick === result ? outcome ='U Win' : 
+      coutcome = 'U Lose';
+    }
+    function computerPick() {
+       random = Math.random();
+      random < 0.5 ? result = 'heads' : result = 'tails';
+    }
+
+
+    
+
+  </script>
+</body>
+
+</html>

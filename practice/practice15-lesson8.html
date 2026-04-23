@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+  <script>
+    display = {
+      name : 'basketball',
+      price : 2095,
+    }
+    display.price += 500; 
+  
+    display['delivery-time'] = '3 days';
+
+
+    product1 = {
+      name: 'tv',
+      price: 5000
+    }
+    product2 = {
+      name: 'tv',
+      price: 5000
+    }
+    product3 = {
+      name: 'table',
+      price: 1000
+    }
+    function compareThePrice(product1, product2) {
+      if(product1.price < product2.price ) {
+        return console.log(`this product  ${product1.name} is much cheaper than ${product2.name}`);
+      }else {
+        return console.log(`this product  ${product2.name} is much cheaper than ${product1.name}`);
+      }
+    }
+    compareThePrice(product1, product2);
+  
+
+    function isSameProduct(product1,product2) {
+      if(product1.name === product2.name &&
+       product1.price === product2.price) {
+        return true;
+      }else {
+        return false;
+      }
+    };
+    console.log(isSameProduct(product1, product2));
+    console.log('test'.repeat(2));
+    
+
+  </script>
+</body>
+</html>
