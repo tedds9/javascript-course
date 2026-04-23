@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+  <script>
+
+    convertLength(5, 'km', 'ft');
+    function convertLength(length, from , to) {
+
+      if(from === 'miles' && to === 'km') {
+        km = length * 1.6;
+        console.log(`${km} km`);
+      }else if (from === 'km' && to === 'miles') {
+        miles = length / 1.6;
+        console.log(`${miles} miles`);
+      }else if (from === 'miles' && to === 'ft') {
+        ft = length * 5280;
+        console.log(`${ft} ft`);
+      }else if (from === 'km' && to === 'ft') {
+        ft = length * 3281;
+        console.log(`${ft} ft`);
+      }else if (from === 'km' && to === );
+      else {
+        console.log(`${length} km`)
+      }
+    }
+
+
+
+
+  </script>
+</body>
+</html>

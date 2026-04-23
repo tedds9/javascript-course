@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+  
+
+  <script>
+    
+    /*
+    function greet (name) {
+      
+      if(!name) {
+        console.log('Hi there')
+      }else {
+      console.log(`Hello ${name}`);
+      }
+
+    }
+    greet();
+    */
+    let unit = 'f';
+    let degrees = 86;
+    convertToTemperature(degrees,unit);
+
+    function convertToFahrenheit(celsius) {
+      fahrenheit = (celsius * 9/5) + 32;
+
+      return fahrenheit;
+    }
+    function convertToCelsius(fahrenheit) {
+      celsius = (fahrenheit - 32 ) * 5/9;
+
+      return celsius;
+    }
+    function convertToTemperature(degrees, unit) {
+      if (unit === 'c') {
+        result = convertToFahrenheit(degrees);
+        console.log(`the fahrenheit is = ${result}F`)
+      }else {
+        result = convertToCelsius(degrees);
+        console.log(`the celsius is ${result}C`)
+      }
+    }
+
+    /*
+    let celsius = 25;
+
+    console.log(answer = convertToFahrenheit (celsius)) ;
+    
+    console.log(convertToCelsius(fahrenheit));
+    */
+  </script>
+</body>
+</html>

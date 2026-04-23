@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cart Quantity</title>
+</head>
+
+<body>
+  <p>Cart Quantity</p>
+
+  <button onclick="
+  console.log(`Cart Quantity: ${quantity}`)">
+    Show Quantity
+  </button>
+  <button onclick=" 
+  if (quantity >= 10) {
+    console.log('the cart is full');
+  }else 
+  {
+  quantity ++;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+    Add to Cart
+  </button>
+  <button onclick="
+  if (quantity >= 10) {
+      console.log('the cart is full');
+      quantity = 10;
+  }else {  
+    quantity += 2;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+    +2
+  </button>
+  <button onclick="
+  if (quantity >= 10) {
+    console.log('the cart is full');
+    quantity = 10;
+  }else {
+    quantity += 3;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+    +3
+  </button>
+  <button onclick="
+  if (quantity >= 10) {
+    console.log('the cart is full');
+    quantity = 10;
+  }else {
+    quantity += 4;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+    +4
+  </button>
+  <button onclick="
+  if (quantity >= 10) {
+    console.log('the cart is full');
+    quantity = 10;
+  }else {
+  quantity += 5;
+  console.log(`Cart Quanttiy: ${quantity}`);
+  }
+  ">
+    +5
+  </button>
+  <button onclick="
+  if(quantity <= 0) {
+    console.log('not enough items in cart')
+  }else {
+  quantity --;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+  Remove from cart
+  </button>
+  <button onclick="
+  if (quantity <= 0) {
+    console.log('not enough items in cart');
+    quantity = 0;
+  }else {
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+  -2  
+  <button onclick="
+  if (quantity <= 0) {
+    console.log('not enough items in cart');
+    quanitity = 0;
+  }else {
+  quantity -= 3;
+  console.log(`Cart Quantity: ${quantity}`);
+  }
+  ">
+  -3
+  </button>
+  </button>
+  <button onclick=" console.log(`Cart was Reset.`);
+  quantity = 0;
+  console.log(`Cart Quantity: ${quantity}`);">
+    Reset Cart
+  </button>
+
+  <script>
+    let quantity = 0;
+    let cartQuantity
+    const variable2 = 3;
+
+    var food = 'food';
+
+    console.log(typeof food);
+
+  </script>
+</body>
+
+</html>
