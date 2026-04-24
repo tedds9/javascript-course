@@ -5,17 +5,25 @@
 
 <body>
   <button onclick="
-    playGame('head');
+    playGame('heads');
     ">
     head
   </button>
 
   <button onclick="
   playGame('tails');
-  "
+  ">
     tails
   </button>
-
+  <button onclick="
+  checkResult.win = 0;
+  checkResult.lose = 0;
+  checkResult.tie = 0;
+  console.log('cleared');
+  console.log(checkResult);
+  ">
+    clear
+  </button>
 
 
 
@@ -25,18 +33,37 @@
     let result ;
     let pick ;
     let outcome;
+    checkResult = localStorage.getItem('score') ;
+    checkResult = JSON.parse(checkResult );
+    if (checkResult === null) {
+       checkResult = {
+        win : 0, lose: 0
+      }
+    }
+
     function playGame(pick) {
       computerPick(); 
 
-      pick === result ? outcome ='U Win' : 
-      coutcome = 'U Lose';
+      if(pick === result) {
+       outcome = 'win'; 
+       checkResult.win += 1;
+      }else {
+       outcome = 'lose';
+       checkResult.lose += 1;
+      }
+
+      console.log(outcome,
+      checkResult
+      
+      );
+      localStorage.setItem('score',
+    JSON.stringify(checkResult));
     }
     function computerPick() {
        random = Math.random();
       random < 0.5 ? result = 'heads' : result = 'tails';
     }
-
-
+    
     
 
   </script>
