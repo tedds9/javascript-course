@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<title>DOM</title>
+<button  onclick="
+  checkResult ('head');
+">
+  heads
+</button>
+<button  onclick="
+  checkResult('tails');
+">
+  tails
+</button>
+<p class="pick1"></p>
+<p class="button1">
+
+</p>
+<body>
+
+
+  <script>
+
+    let random = Math.random();
+    let computerMove;
+    let button1 = document.querySelector('.button1');
+    let pick1 = document.querySelector('.pick1');
+
+    function computerMoves () {
+      if (random < 1/2) {
+        computerMove = 'head';
+      }else {
+        computerMove = 'tails';
+      }
+    }
+    function checkResult (pick) {
+      computerMoves();
+      pick1.innerHTML = 
+      `u choose ${pick} the computer choose ${computerMove}`;
+      if (pick === computerMove) {
+        
+        button1.innerHTML = 'u win';
+        
+      }else {
+        button1.innerHTML = 'u lose';
+      }
+    }
+  </script>
+</body>
+</html>

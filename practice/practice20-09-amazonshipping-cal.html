@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Amazon Shipping Calculator</title>
+
+</head>
+
+<body>
+  <p>
+    Amazon Shippiing Calculator
+  </p>
+  <p>
+    Orders under $40 =+ $10 shipping.
+  </p>
+  <p>
+    Orders over $40 = FREE shipping.
+  </p>
+
+  <input type="text" id="input2" class="input" 
+  onkeydown ="
+  if (event.key === 'Enter') {
+    getInput();
+  calculate();
+  displayCostF ();
+  }
+  
+  "
+  
+  >
+
+
+  <button onclick="
+  getInput();
+  calculate();
+  displayCostF ();
+  " 
+  >Calculate</button>
+  <p class="costdisplay">$15</p>
+
+  <script>
+    let cost;
+    function getInput () {
+      cost = document.querySelector('.input').value;
+
+    }
+
+    function displayCostF () {
+      let displayCost = 
+    document.querySelector('.costdisplay');
+    displayCost.innerHTML = `$${cost}`;
+    }
+    function calculate() {
+      
+      if (cost < 40) {
+        cost = +cost;
+        cost += 10;
+      } else if (cost < 0) {
+        cost = 'invalid number';
+      } else {
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>

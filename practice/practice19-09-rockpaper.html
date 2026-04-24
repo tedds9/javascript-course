@@ -38,7 +38,11 @@
 </P>
 
   <button onclick="
-  playGame('clear')
+        score.win = 0;
+        score.lose = 0;
+        score.tie = 0;
+        localStorage.removeItem('score');
+  scoreDisplayF();
 ">
     clear score
   </button>
@@ -54,10 +58,10 @@
         tie : 0
       };
     
+      scoreDisplayF();
     function textDisplay () {
-      let scoreDisplay = 
-
-      document.querySelector('.scoreTracker');
+      
+      
       let winDisplay = 
 
       document.querySelector('.windisplay');
@@ -66,13 +70,15 @@
       let moveDisplay = 
       document.querySelector('.movedisplay');
       moveDisplay.innerHTML = `You ${pick} - Computer ${computerMove}`
-
+      scoreDisplayF();
+    }
+    function scoreDisplayF () {
+      let scoreDisplay = document.querySelector('.scoreTracker');
       scoreDisplay.innerHTML = 
       `Win: ${score.win}, Losses: ${score.lose}, Ties: ${score.tie}`
     }
-
     
-
+    
 
     function playGame(pick) {
       
@@ -95,12 +101,7 @@
         } else {
           result = 'u lose';
         }
-      } else if (pick === 'clear') {
-        score.win = 0;
-        score.lose = 0;
-        score.tie = 0;
-        localStorage.removeItem('score');
-      } else {
+      }else {
         if (computerMove === 'rock') {
           result = 'u lose';
 
@@ -127,19 +128,6 @@
 
       
       localStorage.setItem('score', JSON.stringify(score));
-      
-      let scoreDisplay = (
-        `Win = ${score.win}  Lose = ${score.lose}  Tie = ${score.tie}`);
-
-
-      let winDisplay = `you pick ${pick} the computer pick ${computerMove}. ${result} 
-${scoreDisplay}`;
-
-    /*  if (pick !== 'clear') {
-        alert(winDisplay);
-      } else
-        alert(`u cleared the score:
-${scoreDisplay}`) */
       
     }
 

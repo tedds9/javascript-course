@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dom</title>
+</head>
+<body>
+<input class="input" onkeydown="">
+<button class="submit" onclick="
+  display();
+">
+  Submit
+</button>
+<p class="text"></p>
+  <script>
+    function display () {
+  let input = document.querySelector('.input').value;    
+    let text = document.querySelector('.text');
+    text.innerHTML = input;
+    console.log(text);
+    }
+    </script>
+</body>
+</html>
