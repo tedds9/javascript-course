@@ -1,0 +1,91 @@
+
+  .b {
+    background-color:
+      rgba(3, 2, 2, 0.795);
+  }
+
+  .f {
+    font-family: Arial;
+  }
+
+  .title {
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+  }
+
+  .rock-img {
+    width: 50px;
+    padding: 35px;
+    border: solid 3px white;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .rock-img:hover {
+    cursor: pointer;
+  }
+
+  .paper-img {
+    width: 50px;
+    padding: 35px;
+    border: solid 3px white;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .paper-img:hover {
+    cursor: pointer;
+  }
+
+  .scissor-img {
+    width: 50px;
+    padding: 35px;
+    border: solid 3px white;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .scissor-img:hover {
+    cursor: pointer;
+  }
+
+  .result-t {
+    color: white;
+    font-size: 30px;
+  }
+
+  .you-t {
+    color: white;
+    width: 50px;
+
+  }
+
+  .comp-t {
+    color: white;
+  }
+
+  .score-t {
+    color: white;
+    margin-top: 50px;
+  }
+
+  .move-img {
+    width: 50px;
+  }
+
+  .r-img1 {
+    width: 50px;
+  }
+
+  .w-hide {
+    opacity: 0;
+  }
+
+  .reset-score {
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .move-img {
+  }

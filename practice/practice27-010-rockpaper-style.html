@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css-files/practice27-rockpaper.css">
+  </head>
+
+<body class="b">
+  <p class="f title">Rock Paper Scissors</p>
+  <img onclick="playGame('rock');" class="rock-img" src="/pictures/rock-emoji.png">
+
+  <img onclick="playGame('paper')" class="paper-img" src="/pictures/paper-emoji.png">
+
+  <img onclick="playGame('scissor')" class="scissor-img" src="/pictures/scissor-emoji.png">
+
+  <p class="f result-t"></p>
+
+  <span class="f you-t move-img"></span>
+
+  <p class="f score-t score-f">
+
+    Wins: 0, Losses:0, Ties:0
+  </p>
+  <button class="f reset-score" onclick="
+
+win = 0;
+lose =0;
+tie=0;
+scoreDisplay.innerHTML = `Win: ${win},Lose: 
+      ${lose}, Tie: ${tie}`;
+
+">
+    Reset Score
+  </button>
+
+<script src="/js-files/practice27-010-rockpaper.js"></script>
+
+
+</body>
+
+</html>

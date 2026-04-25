@@ -9,26 +9,27 @@
   <p>Cart Quantity</p>
 
   <button onclick="
-  console.log(`Cart Quantity: ${quantity}`)">
+  cartShow;
+  ">
     Show Quantity
   </button>
   <button onclick=" 
-  cartQuantity(-1);
+  updateCart(1);
   ">
     Add to Cart
   </button>
   <button onclick="
-  cartQuantity(-2);
+  updateCart(2);
   ">
     +2
   </button>
   <button onclick="
-  cartQuantity(-3)
+  updateCart(3)
   ">
     +3
   </button>
   <button onclick="
-    cartQuantity(-4);
+    updateCart(4);
   ">
     +4
   </button>
@@ -57,31 +58,36 @@
   console.log(`Cart Quantity: ${quantity}`);">
     Reset Cart
   </button>
-  <p class="cartquantitydisplay"></p>
+  <p class="cartquantitydisplay">Cart Quantity: 0</p>
+
   <script>
     let quantity = 0;
     let cartQuantity = 0;
     const variable2 = 3;
+    let cartShow;
     let cartQuantityDisplay =
       document.querySelector(".cartquantitydisplay");
 
+  
+    quantity =  JSON.parse(localStorage.getItem('quantity')) || 0;
+    console.log(quantity);
     function updateCart(num) {
-      if (num) {
-        quantity += num;
-      }
-      if (quantity <= 0) {
+      quantity = Number(quantity);
+      quantity += num;
+      if (quantity < 0) {
         console.log('not enough items in cart');
         quantity = 0;
-
-
-      } else if (quantity >= 10) {
+      } else if (quantity > 10) {
         console.log('the cart is full');
         quantity = 10;
 
       }
-      let = cartShow = 
-      cartQuantityDisplay.innerHTML = quantity;
-      
+      cartShow = 
+      cartQuantityDisplay.innerHTML = 
+      `Cart Quantity: ${quantity}`;
+      quantity = quantity.toString();
+      localStorage.setItem('quantity',
+      JSON.stringify(quantity));
     }
 
   </script>

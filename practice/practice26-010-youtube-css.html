@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>youtube sub button</title>
+  <style>
+    .body {
+      font-family: Arial;
+    }
+    .f {
+      font-family:Arial;
+    }
+    .title {
+      font-family: Arial;
+      font-size: 16px;
+    }
+    .subdesign {
+      background-color: black;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .subclick {
+      background-color: rgb(235, 235, 235);
+      color: black;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-weight: bold;
+      border: none;
+    }
+    .title-amazon {
+      margin-top: 50px;
+    }
+    .order-text1 {
+
+    }
+    .order-text2 {
+
+    }
+    .input {
+    }
+    .button-calculate {
+
+    }
+    .result {
+      margin-bottom: 50px;
+    }
+    .input-design {
+      font-family: Arial;
+      font-size: 14px;
+      padding: 10px ;
+      padding-right: 20px;
+    }
+    .button-design {
+      padding: 12px 20px;
+      color:white;
+      background-color: rgb(3, 143, 3);
+      border: none;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <p class="title">
+    YouTube Subscribe Button
+  </p>
+  <button class="sub subdesign" onclick="
+    
+  subcall();
+">Subscribe</button>
+
+  <p class="f title-amazon">
+    Amazon Shipping Calculator
+  </p>
+  <p class="f order-text1">
+    Orders under $40 = +$10 shipping.
+  </p>
+  <p class="f order-text2">
+    Orders over $40 = FREE shipping.
+  </p>
+  <input class="f input input-design"
+  type="text" placeholder="Cost of order"
+  onkeydown="
+  if(event.key === 'Enter') {
+    calculate();
+  }
+  ">
+
+  <button class="f button-calculate button-design" onclick="
+  calculate();
+  ">
+    Calculate
+  </button>
+  <p class="result"></p>
+
+
+  <script>
+    
+    function calculate () {
+      let input = document.querySelector('.input').value;
+      let result = document.querySelector('.result');
+      
+      if (input ===  ''){
+        result.innerHTML = 'Type your Order cost';
+      }
+      else if (input < 41) {
+        input *= 100;
+        input += 1000;
+        input /= 100;
+        result.innerHTML = `$${input}`;
+      }else {
+        result.innerHTML = input;
+      }
+    }
+  
+    function subcall() {
+      const subElement = document.querySelector('.sub');
+      
+
+      if (subElement.innerText === 'Subscribe') {
+        subElement.innerHTML = 'Subscribed';
+        subElement.classList.add('subclick');
+
+      }else {
+        subElement.innerHTML = 'Subscribe';
+        subElement.classList.remove('subclick');
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
