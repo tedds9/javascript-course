@@ -13,22 +13,22 @@
     Show Quantity
   </button>
   <button onclick=" 
-  updateCart(-1);
+  cartQuantity(-1);
   ">
     Add to Cart
   </button>
   <button onclick="
-  updateCart(-2);
+  cartQuantity(-2);
   ">
     +2
   </button>
   <button onclick="
-  updateCart(-3)
+  cartQuantity(-3)
   ">
     +3
   </button>
   <button onclick="
-    updateCart(-4);
+    cartQuantity(-4);
   ">
     +4
   </button>
@@ -57,27 +57,31 @@
   console.log(`Cart Quantity: ${quantity}`);">
     Reset Cart
   </button>
-
+  <p class="cartquantitydisplay"></p>
   <script>
     let quantity = 0;
     let cartQuantity = 0;
     const variable2 = 3;
+    let cartQuantityDisplay =
+      document.querySelector(".cartquantitydisplay");
 
     function updateCart(num) {
-
       if (num) {
         quantity += num;
-      }  if (quantity <= 0) {
-          console.log('not enough items in cart');
-          quantity = 0;
-        
+      }
+      if (quantity <= 0) {
+        console.log('not enough items in cart');
+        quantity = 0;
 
-        } else if (quantity >= 10) {
-          console.log('the cart is full');
-          quantity = 10;
 
-        }
-      console.log(`Cart Quantity: ${quantity}`);
+      } else if (quantity >= 10) {
+        console.log('the cart is full');
+        quantity = 10;
+
+      }
+      let = cartShow = 
+      cartQuantityDisplay.innerHTML = quantity;
+      
     }
 
   </script>

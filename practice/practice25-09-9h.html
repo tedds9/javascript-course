@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <input class="input" type="text" placeholder="Type something" onkeyup="
+    typing();
+    ">
+  <p class="textdisplay"></p>
+
+
+</head>
+<body>
+
+
+
+  <script>
+    function typing() {
+      let input = document.querySelector('.input').value;
+      let textDisplay = 
+      document.querySelector('.textdisplay');
+      textDisplay.innerHTML = input;
+    }
+
+
+  </script>
+</body>
+</html>

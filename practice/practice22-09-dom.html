@@ -4,7 +4,13 @@
   <title>dom</title>
 </head>
 <body>
-<input class="input" onkeydown="">
+<input class="input" onkeydown="
+if(event.key === 'Enter') {
+  display();
+}else {
+
+}
+">
 <button class="submit" onclick="
   display();
 ">
