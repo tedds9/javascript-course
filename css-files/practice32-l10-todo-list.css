@@ -1,0 +1,14 @@
+
+.display-f {
+  display: flex;
+  flex-direction:row;
+  width: 100px;
+}
+.delete {
+  width:50px;
+  color:white;
+  background-color: maroon;
+}
+.todo-display {
+  width: 70px;
+}
