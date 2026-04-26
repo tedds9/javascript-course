@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="/css-files/practice30-10i-calculator.css">
+</head>
+
+<body class="b">
+  <p>----------------------------------------</p>
+  <p>Calculator</p>
+
+    <p class="text-design textdisplay"></p>
+
+  <button class="buttonClick" onclick="updateCalculation('1')">
+    1
+  </button>
+  <button class="buttonClick" onclick="updateCalculation('2')">
+    2
+  </button>
+  <button class="buttonClick" onclick="updateCalculation('3')">
+    3
+  </button>
+  <button class="button-op" onclick="updateCalculation('+')">
+    +
+  </button>
+
+  <p></p>
+
+  <button class="buttonClick" onclick="updateCalculation('4')">
+    4
+  </button>
+  <button class="buttonClick" onclick="updateCalculation('5');">
+    5
+  </button>
+  <button class="buttonClick" onclick="updateCalculation('6');">
+    6
+  </button>
+  <button class="button-op" onclick="updateCalculation('-');">
+    -
+  </button>
+
+  <p></p>
+
+  <button class="buttonClick" onclick="updateCalculation('7');">
+    7
+  </button>
+  <button class="buttonClick"
+   onclick=" 
+   updateCalculation('8');
+   ">8</button>
+
+  <button class="buttonClick" onclick="updateCalculation('9')">9</button>
+  <button class="button-op" onclick="updateCalculation('*'); ">
+    *
+  </button>
+
+  <p></p>
+
+  <button class="buttonClick" onclick="updateCalculation('0'); ">0</button>
+  <button class="buttonClick" onclick="updateCalculation('.')">.</button>
+
+  <button class="buttonClick" onclick="
+  calculation = eval(calculation);
+  console.log(calculation); 
+  calculation = calculation.toString();
+  updateCalculation('');
+  ">
+    =
+  </button>
+  <button class="button-op" onclick="updateCalculation('/');
+  ">/</button>
+
+  <p></p>
+
+  <button class="buttonClear" onclick="
+    calculation = '';
+    updateCalculation('');
+    textDisplay.innerHTML;
+
+  ">clear</button>
+
+
+
+  <script src="/js-files/practice30-10i-calculator.js">
+    //console.log();
+  
+    
+
+
+
+  </script>
+</body>
+
+</html>

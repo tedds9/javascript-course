@@ -5,6 +5,7 @@ let musicCheck;
 let musicBol;
 let techCheck;
 let techBol;
+
   
   function updateClick() {
     on = document.querySelector('.gaming-on');
@@ -56,3 +57,5 @@ let techBol;
         musicCheck.classList.remove('music-off');
       }
     }
+
+    
