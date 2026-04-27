@@ -1,29 +1,56 @@
+let save = JSON.parse(localStorage.getItem('saveArr'));
+//let saveDate = JSON.parse(localStorage.getItem('saveDate'));
+let arr = save;
+renderList ();
 
-let click = document.querySelector('.click');
-let display = document.querySelector('.display');
-const arrayTodo = [];
+function renderList() {
+  let todoList = ''
+
+  for (i = 0; i < arr.length; i++) {
+    const todoObject = arr[i];
+    let {obName , obDate } = todoObject;
+    const html = `
+      
+
+        <div class="list-box">
+        ${obName}
+        </div>
+
+        <div class="date-js" >
+          ${obDate}
+        </div>
+
+        <div class=button-box>
+          <button class="delete"
+          onclick="arr.splice(${i},1);
+          renderList();
+          ">
+          Delete
+          </button>
+        </div>
+        </div>
+
+  `;
+    todoList += html;
+  }
+  let display = document.querySelector('.display').innerHTML = todoList;
+  localStorage.setItem('saveArr',JSON.stringify(arr));
+}
 
 function add() {
-
-  let input = document.querySelector('.input');
-  input = input.value;
-  arrayTodo.push(input);
-
-  if (input === '') {
-    console.log('type something to add')
-  }else {
-    for (let i = 0; i < arrayTodo.length; i++) {
-      
-      let todoList = arrayTodo[i];
-      display.innerHTML += 
-      `<p class="todo-display">
-      t67${todoList}
-      <buton onclick="" class="delete">Delete</button>
-      </p>`;
-      arrayTodo.splice(0,1);
-      
+  let obName = document.querySelector('.input').value;
+  let obDate = document.querySelector('.date').value;
+  if (obName !== '') {
+  arr.push(
+    {obName,
+      obDate
     }
-  }
+    
+  );
   document.querySelector('.input').value = '';
+  renderList();
   
+  }
 }
+
+

@@ -1,14 +1,60 @@
-
-.display-f {
-  display: flex;
-  flex-direction:row;
-  width: 100px;
+.b {
+  font-family: Arial;
+  
+}
+.title {
+  font-size: 20px;
+}
+.input {
+  font-size: 16px;
+  padding: 10px 5px;
+  width: 180px;
+}
+.click {
+  background-color: green;
+  color: white;
+  padding: 12px 40px;
+  font-size: 16px;
+  width: 120px;
+  border:none;
+  cursor: pointer;
+}
+.click:active {
+  opacity: 0.4;
 }
 .delete {
-  width:50px;
-  color:white;
-  background-color: maroon;
+  background-color: rgb(196, 0, 0);
+  color: white;
+  border:none;
+  cursor: pointer;
+  padding: 10px 40px;
+  display: flex;
+
 }
-.todo-display {
-  width: 70px;
+.delete:active {
+  opacity: 0.4;
+}
+.date-f {
+  padding: 10px 5px;
+  font-size: 14px;
+  width: 130px;
+}
+
+.display-f,.input-grid {
+  width: 466px;
+  display: grid;
+  grid-template-columns: 200px 150px 120px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  
+
+}
+.list-box {
+}
+.date-js {
+}
+.button-box {
+
 }

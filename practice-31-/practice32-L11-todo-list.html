@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="/css-files/practice32-l10-todo-list.css">
 
-  <style>
-    .display-f {
-      font-size: 20px;
+</head>
+
+<body class="b">
+  <p class="title">Todo List</p>
+
+  <div class="input-grid">
+    <input
+    onkeydown="
+    if(event.key === 'Enter') {
+      add();
       
     }
+    "
+    class="input" type="text" placeholder="Todo name">
+    <input class="date date-f" type="date">
+    <button class="click" 
+    onclick="
+    add();
 
-  </style>
-</head>
-<body>
-<input
-onkeydown="
-if(event.key === 'Enter') {
-  add();
-}
-"
-class="input" type="text" placeholder="Todo name">
-<button class="click" 
-onclick="
-add();
-" >Add</button>
-
+    " >Add</button>
+</div>
 <div class="display display-f"></div>
 
 

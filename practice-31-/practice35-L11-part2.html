@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+<script>
+  function multi (arr1) {
+
+let arr2 = [];
+
+for(i = 0; i < arr1.length; i++) {
+  if(arr1[i] === 0) {
+      return console.log('ty a proper value')
+  }
+  let multi = arr1[i] * 2;
+      arr2.push(arr1[i]* 2);
+
+}
+
+return arr2 ;
+  }
+multi([1,2,5]);
+arr2 = multi([4,6,54,33,0]);
+console.log(arr2);
+
+
+  /*
+const array1 = [1,2,3];
+const array2 = array1.slice();
+array2.push(4);
+console.log(array1);
+console.log(array2);
+
+const [first,second,third,fourth] = [1, 2, 3];
+for (let i = 0; i<= 10; i++) {
+  let r = i/3;
+  if (i %3 ===0  ) {
+    continue;
+  }else {
+    console.log(i);
+  }
+}
+
+let i = 0;
+while(i < 10) {
+i++
+  if(i % 3 === 0) {
+    continue;
+
+  }else {
+  
+console.log(i);
+  }
+}
+*/
+</script>
+
+</body>
+</html>
