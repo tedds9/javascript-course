@@ -10,21 +10,38 @@
 
 
   <script>
-    let arr = [];
+    let arr = ['red', 'green', 'green', 'red'];
+    let rev = [];
+
     function findIndex(array,word) {
+
       for (i = 0; i < array.length; i++) {
+        
         if (array[i] === word) {
-          return i;
+          if (arr)
+          return i;  
+        }
+        else {
+          let e = -1;
         }
       }
-          return -1;
         
+          return e;
+          
     }
-    ret = findIndex(['green', 'red', 'blue', 'red'], 'yellow');
-    console.log(ret);
 
-
-
+    function unique(array) {
+      for (let i = 0; i < array.length; i++){
+      let word = array[i];
+      
+        let returnNum = findIndex(arr,word);
+        if (returnNum === i) {
+          rev.push(arr[i]);    
+        }  
+      }
+    }
+    unique(arr);
+    console.log(rev);
 
   </script>
 </body>

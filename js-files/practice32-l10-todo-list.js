@@ -1,17 +1,22 @@
 let save = JSON.parse(localStorage.getItem('saveArr'));
 //let saveDate = JSON.parse(localStorage.getItem('saveDate'));
 let arr = save;
-renderList ();
 
+let keyAdd = document.querySelector('.key-add');
+
+keyAdd.addEventListener('click', () => {
+  add();
+});
+
+renderList();
 function renderList() {
   let todoList = ''
+  let addArr = '';
 
-  for (i = 0; i < arr.length; i++) {
-    const todoObject = arr[i];
-    let {obName , obDate } = todoObject;
+  arr.forEach((todoObject, i) => {
+    let { obName, obDate } = todoObject;
     const html = `
       
-
         <div class="list-box">
         ${obName}
         </div>
@@ -20,11 +25,9 @@ function renderList() {
           ${obDate}
         </div>
 
-        <div class=button-box>
-          <button class="delete"
-          onclick="arr.splice(${i},1);
-          renderList();
-          ">
+        <div class="button-box">
+          <button class="delete key-delete"
+          >
           Delete
           </button>
         </div>
@@ -32,24 +35,37 @@ function renderList() {
 
   `;
     todoList += html;
-  }
-  let display = document.querySelector('.display').innerHTML = todoList;
-  localStorage.setItem('saveArr',JSON.stringify(arr));
+  });
+
+  document.querySelector('.display').innerHTML = todoList;
+
+document.querySelectorAll('.key-delete') 
+  .forEach((deleteListE, i) => {
+  deleteListE.addEventListener('click', () => {
+    arr.splice(i, 1);
+    renderList();
+
+  });
+});
+    
+
+  localStorage.setItem('saveArr', JSON.stringify(arr));
 }
 
 function add() {
   let obName = document.querySelector('.input').value;
   let obDate = document.querySelector('.date').value;
   if (obName !== '') {
-  arr.push(
-    {obName,
-      obDate
-    }
-    
-  );
-  document.querySelector('.input').value = '';
-  renderList();
-  
+    arr.push(
+      {
+        obName,
+        obDate
+      }
+
+    );
+    document.querySelector('.input').value = '';
+    renderList();
+
   }
 }
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title class="title-display"></title>
+
+
+</head>
+
+
+<body>
+  <button class="addMessage" onclick="
+    intervalAddMinus('Add');
+    ">Add</button>
+  <button class="MinusMessage"
+  onclick="
+  intervalAddMinus('Minus');
+  ">Remove</button>
+
+  <p></p>
+  <button class="button"
+  onclick="
+  button.innerText = 'loading...';
+  setTimeout(clickButton,1000);
+  ">Start</button>
+  <p></p>
+
+  <button class="addButton" onclick="
+  added.innerText = 'Added'
+  run();
+  
+  ">
+    Add to cart
+  </button>
+  <p class="added"></p>
+
+  <script>
+    let setTimeId;
+    let button = document.querySelector('.button');
+    let added = document.querySelector('.added');
+    let timerTitle = document.querySelector('.title-display');
+    let numMessage = 2;
+    let numAdd = 1;
+    let numMinus = -1;
+
+    intervalTitle();
+    function intervalTitle () {
+      setInterval(displayInterval,1000)
+    }
+    let interval = false;
+    function displayInterval () {
+      if (numMessage === 0) {
+        timerTitle.innerHTML = 'App';
+        return;
+      }
+      if (!interval) {
+        timerTitle.innerText = `(${numMessage}) New messages`;
+        interval = true;
+      }else {
+        timerTitle.innerText = 'App';
+        interval = false;
+      }
+    }
+
+    
+    function intervalAddMinus (select) {
+      if (numMessage < 0) {
+        numMessage = 0;
+      } else if (select === 'Add') {
+        numMessage += numAdd;
+      }else{
+
+        numMessage += numMinus;
+      }
+    }
+
+    function clickButton() {
+      isStart = false;
+      if (!isStart) {
+        button.innerText = 'Finished!'
+        isStart = true;
+      }
+    }
+    let timerClick
+    function run() {
+        clearTimeout(timerClick);
+        timerClick = setTimeout(addToCart,2000);
+   
+    }
+
+    function addToCart () {
+      added.innerText = '';
+
+    }
+
+    
+    /*
+    let add = function addFun () {
+      console.log(2+3);
+    }
+    
+    function runTwice(fun) {
+      fun();
+      fun();
+      
+    }
+      runTwice(add)
+      */
+
+
+
+  </script>
+</body>
+</html>
