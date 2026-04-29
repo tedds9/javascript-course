@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+
+
+
+  <script>
+let count = 0;
+const multiply = (num1,num2) => console.log(num1*num2);
+multiply(7,10);
+
+const countPositive = (nums) => {
+  nums.forEach((value,i) => {
+    
+    if (value >= 0) {
+      count += 1;
+    }
+  });
+  return count;
+};
+
+console.log(countPositive([-2,3,-5,7,10]))
+const addNum = (array,num) => {
+};
+let eachAdd = [];
+  const addNum2 = (array,num) => {
+      array.forEach((array,i)=> (eachAdd.push(array +=num)))
+};
+  addNum2([-2, -1, 0, 99],2);
+  console.log(eachAdd);
+
+  const removeEgg = (food) => {
+    let check = 0;
+    console.log(food.filter((value, i)=> {
+      if (check < 3) {
+        check++;
+      return value !== 'egg';
+      
+      }else {
+        return value;
+      }
+    }));
+  }
+removeEgg(['egg','apple','egg','egg','ham'])
+
+  </script>
+
+</body>
+
+
+
+</html>

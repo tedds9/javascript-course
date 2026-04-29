@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title class="titleTimer">App</title>
+</head>
+<body>
+<button class="start">
+  start
+</button>
+<p></p>
+<button class="loading">
+  Start
+</button>
+<p></p>
+<button class="addCart">Add to cart</button>
+<p class="addDisplay"></p>
+<p></p>
+<button class="addB">
+  Add
+</button>
+<button class="minusB">
+  Remove
+</button>
+
+  <script>
+let clickStart = document.querySelector('.start');
+clickStart.addEventListener('click', () => {
+  setTimeout(()=> {
+    clickStart.innerHTML = 'Finished!'
+  },1000)
+  
+})
+
+let resetTimer;
+let loading = document.querySelector('.loading');
+  loading.addEventListener('click', ()=> {
+    loading.innerHTML = 'loading...'
+    setTimeout(()=>loading.innerHTML = 'Finished!',1000);
+  });
+
+  let addCart = document.querySelector('.addCart');
+  let addDisplay = document.querySelector('.addDisplay');
+
+  addCart.addEventListener('click', ()=> {
+    addDisplay.innerHTML = 'Added';
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(()=> {
+      addDisplay.innerHTML = '';
+    },2000);
+  });
+  let inter;
+  let messages = 2;
+let addB = document.querySelector('.addB');
+let minusB = document.querySelector('.minusB');
+  addB.addEventListener('click', ()=> {
+    messages += 1;
+  })
+  minusB.addEventListener('click', ()=> {
+    if (messages < 0) {
+      messages = 0;
+      return;
+    }else {
+    messages -= 1;
+    }
+  })
+  let titleTimer = document.querySelector('.titleTimer');
+  let check = false;
+  
+  
+  inter = setInterval(()=> {
+    if (messages <= 0) {
+      titleTimer.innerHTML = 'App';
+    }
+    else if (!check) {
+      titleTimer.innerHTML = `(${messages}) New messages`;
+      check = true;
+    }else {
+      titleTimer.innerHTML = 'App';
+      check = false;
+    }
+  },1000);
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
